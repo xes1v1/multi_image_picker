@@ -86,15 +86,13 @@ public class MultiImagePickerPlugin implements
     private MethodCall methodCall;
 
 
-    private MultiImagePickerPlugin(Activity activity, Context context, MethodChannel channel, BinaryMessenger messenger) {
-        this.activity = activity;
-        this.context = context;
-        this.channel = channel;
-        this.messenger = messenger;
+    private MultiImagePickerPlugin() {
+
     }
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+        messenger = binding.getBinaryMessenger();
         channel = new MethodChannel(binding.getBinaryMessenger(), CHANNEL_NAME);
         context = binding.getApplicationContext();
         channel.setMethodCallHandler(this);
