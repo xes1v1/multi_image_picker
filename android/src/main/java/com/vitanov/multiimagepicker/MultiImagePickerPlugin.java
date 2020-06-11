@@ -86,7 +86,7 @@ public class MultiImagePickerPlugin implements
     private MethodCall methodCall;
 
 
-    private MultiImagePickerPlugin() {
+    public MultiImagePickerPlugin() {
 
     }
 
